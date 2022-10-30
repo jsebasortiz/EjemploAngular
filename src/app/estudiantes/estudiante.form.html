@@ -1,0 +1,46 @@
+<div class="card bg-dark text-white">
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body">
+
+    <form>
+
+      <div class="form-group row">
+        <label for="id" class="col-form-label col-sm-2"></label>
+        <div class="col-sm-6" id="id">
+          <input type="text" class="form-control" [(ngModel)]="estudiante.id" name="Id">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Nombre" class="col-form-label col-sm-2"></label>
+        <div class="col-sm-6" id="Nombre">
+          <input type="text" class="form-control" [(ngModel)]="estudiante.nombre" name="Nombre">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Apellido" class="col-form-label col-sm-2"></label>
+        <div class="col-sm-6" id="Apellido">
+          <input type="text" class="form-control" [(ngModel)]="estudiante.apellido" name="Apellido">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Cedula" class="col-form-label col-sm-2"></label>
+        <div class="col-sm-6" id="Cedula">
+          <input type="text" class="form-control" [(ngModel)]="estudiante.cedula" name="Cedula">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Creado_en" class="col-form-label col-sm-2"></label>
+        <div class="col-sm-6" id="Creado_en">
+          <input type="text" class="form-control" [(ngModel)]="estudiante.creado_en" name="Creado en">
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
