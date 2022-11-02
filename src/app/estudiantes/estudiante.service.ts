@@ -18,4 +18,8 @@ export class EstudianteService {
       map(response => response as Estudiante[])
     );
   }
+  getEstudiante(id: number): Observable<Estudiante>{
+    return this.httpClient.get<Estudiante>(`${this.urlEndPoint}/${id}`)
+
+  }
 }

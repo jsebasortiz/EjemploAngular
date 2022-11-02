@@ -1,8 +1,8 @@
 export class Estudiante {
-  id: number;
-  cedula: number;
-  nombre: string;
-  apellido: string;
-  correo: string;
-  creado_en: Date;
+  public id: number;
+  public cedula: number;
+  public nombre: string;
+  public apellido: string;
+  public correo: string;
+  public creadoEn: Date;
 }

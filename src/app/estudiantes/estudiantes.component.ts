@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Estudiante} from "./estudiante";
 import {EstudianteService} from "./estudiante.service";
 
@@ -9,14 +9,15 @@ import {EstudianteService} from "./estudiante.service";
 })
 export class EstudiantesComponent implements OnInit {
 
-  estudiantes: Estudiante[]=[];
+  estudiantes: Estudiante[] = [];
 
-  constructor(private estudianteService: EstudianteService) { }
+  constructor(private estudianteService: EstudianteService) {
+  }
 
   ngOnInit(): void {
-      this.estudianteService.getEstudiantes().subscribe(
-        estudiantes => this.estudiantes=estudiantes
-      );
+    this.estudianteService.getEstudiantes().subscribe(
+      estudiantes => this.estudiantes = estudiantes
+    );
   }
 
 }

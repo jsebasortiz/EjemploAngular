@@ -12,26 +12,27 @@
       <th>Apellido</th>
       <th>Cedula</th>
       <th>Correo</th>
-      <th>Creado_en</th>
+      <th>Creado En</th>
       <th>Editar</th>
       <th>Eliminar</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor= "let estudiante of estudiantes">
+    <tr *ngFor="let estudiante of estudiantes">
       <td>{{estudiante.id}}</td>
       <td>{{estudiante.nombre}}</td>
       <td>{{estudiante.apellido}}</td>
       <td>{{estudiante.cedula}}</td>
       <td>{{estudiante.correo}}</td>
-      <td>{{estudiante.creado_en}}</td>
+      <td>{{estudiante.creadoEn}}</td>
       <td>
-        <button type="button" [routerLink]="['/estudiantes/form', estudiante.id]" name="Editar" class="btn btn-primary btn-sm">Editar</button>
+        <button type="button" [routerLink]="['/estudiantes/form', estudiante.id]" name="Editar"
+                class="btn btn-primary btn-sm">Editar
+        </button>
       </td>
       <td>
-        <button type="button"  name="Eliminar" class="btn btn-danger btn-sm">Eliminar</button>
+        <button type="button" name="Eliminar" class="btn btn-danger btn-sm">Eliminar</button>
       </td>
-
     </tr>
     </tbody>
   </table>
