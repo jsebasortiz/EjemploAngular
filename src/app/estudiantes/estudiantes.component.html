@@ -1,39 +1,73 @@
-<div class="card border-primary mb-3" style="width: 80%; position: absolute; left:10%;">
-  <div class="card-header">Listado de estudiantes</div>
-  <div class="card-body text-primary">
-    <h5 class="card-title">Estudiantes</h5>
-    <p class="card-text"></p>
+<div class="card border-dark mb-3" style="width: 20.5%; position: absolute; left:60%; top: 10%" >
+  <div class="card-header text-bg-dark">Tweets</div>
+
+  <div class="card-body text-bg-dark">
+    <h5 class="card-title">Tweets</h5>
+    <p><button type="button" [routerLink]="['/estudiantes/form']"
+            name="Crear" class="btn btn-success btn-sm">Crear un tweet</button></p>
   </div>
-  <table class="table table-bordered table-striped">
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Cedula</th>
-      <th>Correo</th>
-      <th>Creado En</th>
-      <th>Editar</th>
-      <th>Eliminar</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let estudiante of estudiantes">
-      <td>{{estudiante.id}}</td>
-      <td>{{estudiante.nombre}}</td>
-      <td>{{estudiante.apellido}}</td>
-      <td>{{estudiante.cedula}}</td>
-      <td>{{estudiante.correo}}</td>
-      <td>{{estudiante.creadoEn}}</td>
-      <td>
-        <button type="button" [routerLink]="['/estudiantes/form', estudiante.id]" name="Editar"
-                class="btn btn-primary btn-sm">Editar
-        </button>
-      </td>
-      <td>
-        <button type="button" name="Eliminar" class="btn btn-danger btn-sm">Eliminar</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="card text-bg-dark mb-3" style="max-width: 19.5rem;">
+    <div class="card-body">
+      <tr *ngFor="let estudiante of estudiantes">
+        <h5>
+
+        </h5>
+        <h5>
+
+        </h5>
+      <h5 class="card-title">By: {{estudiante.nombre}}  {{estudiante.apellido}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Publicado el {{estudiante.creadoEn}}</h6>
+      <p class="text-break" > {{estudiante.mensaje}} </p>
+
+      <a><button type="button" [routerLink]="['/estudiantes/form', estudiante.id]" name="Editar"
+                 class="btn btn-success btn-sm">Editar
+      </button></a>
+        <a><button type="button" name="Eliminar" (click)="delete(estudiante)" class="btn btn-danger btn-sm">Eliminar
+        </button></a>
+      </tr>
+    </div>
+      <a> </a>
+      <div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+<!--  <table class="table table-bordered table-striped">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>Id</th>-->
+<!--      <th>Nombre</th>-->
+<!--      <th>Apellido</th>-->
+<!--      <th>Creado en</th>-->
+<!--      <th>Mensaje</th>-->
+<!--      <th>Editar</th>-->
+<!--      <th>Eliminar</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr *ngFor="let estudiante of estudiantes">-->
+<!--      <td>{{estudiante.id}}</td>-->
+<!--      <td>{{estudiante.nombre}}</td>-->
+<!--      <td>{{estudiante.apellido}}</td>-->
+<!--      <td>{{estudiante.creadoEn}}</td>-->
+<!--      <td>{{estudiante.mensaje}}</td>-->
+
+<!--      <td>-->
+<!--        <button type="button" [routerLink]="['/estudiantes/form', estudiante.id]" name="Editar"-->
+<!--                class="btn btn-primary btn-sm">Editar-->
+<!--        </button>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <button type="button" name="Eliminar" (click)="delete(estudiante)" class="btn btn-danger btn-sm">Eliminar </button>-->
+<!--      </td>-->
+<!--      <td>-->
+
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--    <button type="button" [routerLink]="['/estudiantes/form']"-->
+<!--            name="Crear" class="btn btn-success btn-sm">Crear</button>-->
+<!--  </table>-->

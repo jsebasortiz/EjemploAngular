@@ -1,50 +1,57 @@
-<div class="card bg-dark text-white">
-  <div class="card-header">{{titulo}}</div>
-  <div class="card-body">
+<div class="card border-dark mb-3" style="width: 45%; position: absolute; left:25%; top: 10%">
+  <div class="card-header text-bg-dark ">Tweet</div>
+  <div class="card-body text-dark ">
+    <h5 class="card-title">Editar tweet </h5>
+    <p class="card-text"></p>
 
     <form>
-
-      <div class="form-group row">
-        <label for="id" class="col-form-label col-sm-2"></label>
+      <div class="form-group row" *ngIf="estudiante.id">
+        <label for="id" class="col-form-label col-sm-2">Id</label>
         <div class="col-sm-6" id="id">
           <input type="text" class="form-control" [(ngModel)]="estudiante.id" name="Id">
         </div>
       </div>
+
       <div class="form-group row">
-        <label for="Nombre" class="col-form-label col-sm-2"></label>
+        <label for="Nombre" class="col-form-label col-sm-2">Nombre</label>
         <div class="col-sm-6" id="Nombre">
           <input type="text" class="form-control" [(ngModel)]="estudiante.nombre" name="Nombre">
         </div>
       </div>
 
       <div class="form-group row">
-        <label for="Apellido" class="col-form-label col-sm-2"></label>
+        <label for="Apellido" class="col-form-label col-sm-2">Apellido</label>
         <div class="col-sm-6" id="Apellido">
           <input type="text" class="form-control" [(ngModel)]="estudiante.apellido" name="Apellido">
         </div>
       </div>
 
       <div class="form-group row">
-        <label for="Cedula" class="col-form-label col-sm-2"></label>
-        <div class="col-sm-6" id="Cedula">
-          <input type="text" class="form-control" [(ngModel)]="estudiante.cedula" name="Cedula">
+        <label for="Mensaje" class="col-form-label col-sm-2">Mensaje</label>
+        <div class="col-sm-6" id="Mensaje">
+          <input type="text" class="form-control" [(ngModel)]="estudiante.mensaje" name="Mensaje">
         </div>
       </div>
       <div class="form-group row">
-        <label for="Correo" class="col-form-label col-sm-2"></label>
-        <div class="col-sm-6" id="Correo">
-          <input type="text" class="form-control" [(ngModel)]="estudiante.correo" name="Correo">
+        <label for="Fecha de creación" class="col-form-label col-sm-2">Fecha de creación</label>
+        <div class="col-sm-6" id="Fecha de creación">
+          <input type="text" class="form-control" [(ngModel)]="estudiante.creadoEn" name="Fecha de creación">
         </div>
       </div>
-      <div class="form-group row">
-        <label for="CreadoEn" class="col-form-label col-sm-2"></label>
-        <div class="col-sm-6" id="CreadoEn">
-          <input type="text" class="form-control" [(ngModel)]="estudiante.creadoEn" name="Creado en">
-        </div>
-      </div>
+      <button type="button" [routerLink]="['/estudiantes/'] " name="Cancelar"
+              class="btn btn-danger">Cancelar
+      </button>
 
+      <button type="button" name="crear" (click)="create()" *ngIf="!estudiante.id else elseBlock"
+              class="btn btn-success">Crear tweet
+      </button>
+      <ng-template #elseBlock>
+
+        <button type="button" name="Actualizar" (click)="update()"
+                class="btn btn-success">Actualizar
+        </button>
+      </ng-template>
     </form>
-
   </div>
 </div>
 
